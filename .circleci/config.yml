@@ -13,7 +13,7 @@ jobs:
           name: Install Poetry
           command: |
             curl -sSL https://install.python-poetry.org | python3 -
-            export PATH="/home/circleci/.local/bin:$PATH"
+            export PATH="$HOME/.poetry/bin:$PATH"
 
       - run:
           name: Install dependencies

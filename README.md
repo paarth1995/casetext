@@ -18,10 +18,9 @@ An HTTP API for legal terms.
 
 You need to have the following installed
 
-* docker desktop
-* Terraform
-* aws cli
-* git cli
+* [docker desktop](https://docs.docker.com/desktop/install/mac-install/)
+* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+* [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 ## To run the app locally via DockerFile
 
@@ -52,7 +51,7 @@ You need to have the following installed
 ## Provision on AWS EKS and access the app publically
 
 1. sso into your aws account.
-2. cd casetext/infra
+2. `cd casetext/infra`
 3. `terraform init` 
 4. `terraform plan` 
 5. `terraform apply`

@@ -17,7 +17,7 @@ You need to have the following installed
 
 ## To run the app locally via DockerFile
 
-1. cd legal-term-api 
+1. cd casetext 
 2. docker build -t casetext .
 3. docker run -p 8000:8000 casetext ( use -d to run as daemon)
 
@@ -26,17 +26,17 @@ You need to have the following installed
 1. Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
 2. minikube start
 3. Install [Kubectl]()
-4. cd legal-term-api
+4. cd casetext
 5. kubernetes apply -f local-manifest.yaml
 6. Confirm deployment has been created : `kubectl get deployment`
 7. Confirm service has been created : `kubectl get svc`
 8. Run `kubectl port-forward svc/python-casetext 8000:8000` 
 9. Go to http://localhost:8000/terms to access it via the browser. 
 
-## OPTIONAL : Provision EKS cluster on AWS EKS and access the app
+## Provision on AWS EKS and access the app
 
 1. sso into your aws account.
-2. cd legal-term-api/infra
+2. cd casetext/infra
 3. `terraform init` 
 4. `terraform plan` 
 5. `terraform apply`
@@ -48,7 +48,7 @@ You need to have the following installed
 
 ## Pipeline Overview
 
-The pipelien is built using CircleCI. It runs the following steps : 
+The pipeline is built using CircleCI. It runs the following steps : 
 
 1. Checkout code
 2. Installs poetry

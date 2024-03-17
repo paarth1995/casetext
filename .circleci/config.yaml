@@ -1,43 +1,39 @@
 version: 2.1
 
+orbs:
+  python: circleci/python@2.0.3
+
 jobs:
   build:
-    docker:
-      - image: circleci/python:3.8
+    machine:
+      image: ubuntu-2204:2024.01.1
     steps:
       - checkout
-
-      # Install Poetry
       - run:
           name: Install Poetry
           command: |
-            pip install poetry
+            curl -sSL https://install.python-poetry.org | python3 -
 
-      # Install project dependencies
       - run:
           name: Install dependencies
           command: |
             poetry install
 
-      # Run unit tests
       - run:
           name: Run unit tests
           command: |
             poetry run pytest
 
-      # Log in to Docker Hub
       - run:
           name: Log in to Docker Hub
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      # Build Docker image
       - run:
           name: Build Docker image
           command: |
             docker build -t $DOCKER_USERNAME/casetext:latest .
 
-      # Push Docker image to Docker Hub
       - run:
           name: Push Docker image to Docker Hub
           command: |

@@ -5,12 +5,14 @@ orbs:
 
 jobs:
   build:
-    executor: python/default 
+    executor: 
+      name: python/default
+      tag: '3.12' 
+      
     steps:
       - checkout
 
       - python/install-packages:
-          version: "3.12"
           pkg-manager: poetry
 
       - run:

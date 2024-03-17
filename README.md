@@ -36,7 +36,7 @@ You need to have the following installed
 3. Click on Kubernetes and select Enable Kubernetes.
 4. Click on Apply and Restart.
 
-## For local development
+## Kubernetes for local development
 
 1. Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
 2. minikube start

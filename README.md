@@ -7,6 +7,13 @@ An HTTP API for legal terms.
 * `GET /terms`: list all available terms.
 * `GET /definitions?term=<term>`: get the definition of a term.
 
+## Files of Interest
+
+1. Dockerfile present in the root of the directory.
+2. local-manifest.yaml for local development
+3. Pipeline config in .circleci directory
+4. kubernetes-manifest.yaml file for EKS can be found in infra/modules/EKS
+
 ## Pre Requisites
 
 You need to have the following installed
@@ -55,7 +62,7 @@ You need to have the following installed
 9. Go to the browser, paste the `http://load_balancer_hostname:8000/terms` to access the API. ( Note : it may take a while to serve the page so you may have to refresh the page a couple of times.)
 10. `terraform destroy` for cleanup.
 
-## Optional : To setup your own CircleCI account and connect the github account to run the pipeline
+## Optional : To setup your own CircleCI account
 
 Follow these steps : https://circleci.com/docs/first-steps/
 

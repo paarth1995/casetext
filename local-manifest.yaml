@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-casetext
+spec:
+  selector:
+    matchLabels:
+      app: casetext
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: casetext
+    spec:
+      containers:
+      - name: python-casetext
+        image: paarthsharma/casetext:latest
+        ports:
+        - containerPort: 8000
+
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-casetext
+spec:
+  selector:
+    app: casetext
+  type: NodePort
+  ports:
+    - port: 8000
+      nodePort: 30000

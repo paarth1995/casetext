@@ -56,7 +56,7 @@ You need to have the following installed
 4. `terraform plan` 
 5. `terraform apply`
 6. Creates a VPC with the following components : VPC, 2 subnets, A SG group that allows all traffic, a route table and an internet gateway.
-7. Creates an EKS cluster with a self managed node group, a deployement and a load balancer service. 
+7. Creates an EKS cluster with a self managed node group, a deployment and a load balancer service. 
 8. After `tf apply` finishes running, copy the value of `load_balancer_hostname` from the outputs.
 9. Go to the browser, paste the `http://load_balancer_hostname:8000/terms` to access the API. ( Note : it may take a while to serve the page so you may have to refresh the page a couple of times.)
 10. `terraform destroy` for cleanup.

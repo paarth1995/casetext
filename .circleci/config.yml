@@ -10,9 +10,7 @@ jobs:
       - checkout
 
       - python/install-packages:
-          args: poetry
-          pkg-manager: pip
-          pypi-cache: false
+          pkg-manager: poetry
 
       - run:
           name: Install dependencies

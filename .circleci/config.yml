@@ -5,16 +5,14 @@ orbs:
 
 jobs:
   build:
-    executor: python/default
+    machine:
+      image: ubuntu-2204:2023.04.1
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
-
       - run:
           name: Install Poetry
           command: |
-            pip install poetry
+            curl -sSL https://install.python-poetry.org | python3 -
 
       - run:
           name: Install dependencies

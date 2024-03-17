@@ -48,7 +48,7 @@ You need to have the following installed
 8. Run `kubectl port-forward svc/python-casetext 8000:8000` 
 9. Go to http://localhost:8000/terms to access it via the browser. 
 
-## Provision on AWS EKS and access the app publically
+## Provision on AWS EKS and access the app publicly
 
 1. sso into your aws account.
 2. `cd casetext/infra`
